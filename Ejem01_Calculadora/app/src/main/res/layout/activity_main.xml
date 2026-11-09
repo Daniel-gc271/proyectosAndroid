@@ -15,7 +15,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tv_res"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -30,32 +30,33 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btn_del"
-            android:layout_width="wrap_content"
+            android:id="@+id/btn_add"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/btn_add" />
 
         <Button
-            android:id="@+id/btn_ce"
-            android:layout_width="wrap_content"
+            android:id="@+id/btn_sub"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/btn_sub" />
 
         <Button
-            android:id="@+id/btn_0"
-            android:layout_width="wrap_content"
+            android:id="@+id/btn_mult"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/btn_mul" />
 
         <Button
-            android:id="@+id/btn_res"
-            android:layout_width="wrap_content"
+            android:id="@+id/btn_div"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/btn_div" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -64,32 +65,32 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btn_add"
-            android:layout_width="0dp"
+            android:id="@+id/btn_0"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/btn_00" />
 
         <Button
-            android:id="@+id/btn_sub"
-            android:layout_width="0dp"
+            android:id="@+id/btn_del"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/btn_del" />
 
         <Button
-            android:id="@+id/btn_mult"
-            android:layout_width="0dp"
+            android:id="@+id/btn_ce"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/btn_ce" />
 
         <Button
-            android:id="@+id/btn_div"
-            android:layout_width="0dp"
+            android:id="@+id/btn_res"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/btn_eq" />
 
     </LinearLayout>
 
@@ -103,21 +104,21 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/btn_01" />
 
         <Button
             android:id="@+id/btn_2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/btn_2" />
 
         <Button
             android:id="@+id/btn_3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/btn_3" />
     </LinearLayout>
 
     <LinearLayout
@@ -130,21 +131,21 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/btn_4" />
 
         <Button
             android:id="@+id/btn_5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/btn_5" />
 
         <Button
             android:id="@+id/btn_6"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/btn_6" />
     </LinearLayout>
 
 
@@ -158,21 +159,21 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/btn_7" />
 
         <Button
             android:id="@+id/btn_8"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/btn_8" />
 
         <Button
             android:id="@+id/btn_9"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:text="@string/btn_9" />
     </LinearLayout>
 
 
