@@ -1,12 +1,11 @@
 package gregoriofer.local.ejem01_calculadora
 
 import android.os.Bundle
-import android.view.View
+
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+
 import gregoriofer.local.ejem01_calculadora.databinding.ActivityMainBinding
 
 
@@ -72,7 +71,7 @@ private fun calcularResultado() {
 
         val num1 = resultadoMatch.groupValues[1].toDouble()
         val operador = resultadoMatch.groupValues[2]
-        val num2 = resultadoMatch.groupValues[3]
+        val num2 = resultadoMatch.groupValues[3].toDouble()
 
         val resultado = when (operador) {
             "+" -> num1 + num2
@@ -88,11 +87,12 @@ private fun calcularResultado() {
         binding.tvRes.text = resultado.toString()
 
         operacion.clear()
-        operacion.append(resultado)
+        operacion.append(resultado.toString())
 
     } catch (e: Exception) {
         binding.tvRes.text = "Error"
         operacion.clear()
+        e.printStackTrace()
     }
 }
 
