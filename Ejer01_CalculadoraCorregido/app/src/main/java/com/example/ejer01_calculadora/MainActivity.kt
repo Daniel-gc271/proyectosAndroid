@@ -53,6 +53,7 @@ class MainActivity : AppCompatActivity() {
     }*/
 
     //var op2 = ""
+    var numero2Negativo: Boolean = false
     fun onClick(view: android.view.View){
         when ((view as Button).text.toString()) {
             "+" -> {
@@ -62,11 +63,15 @@ class MainActivity : AppCompatActivity() {
             }
             "-" -> {
                  numero1=binding.tvResultado.text.toString().toInt()
+                numero2Negativo=true
                 binding.tvResultado.text= ""
             }
             "=" -> {
                 Log.d("depurando","numero1: $numero1, numero2: $numero2")
-                 numero2=binding.tvResultado.text.toString().toInt()
+                 numero2=when{
+                    numero2Negativo -> binding.tvResultado.text.toString().toInt()*-1
+                    else -> binding.tvResultado.text.toString().toInt()
+                }
                  binding.tvResultado.text= (numero1+ numero2).toString()
             }
             else -> {
