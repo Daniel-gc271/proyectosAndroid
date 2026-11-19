@@ -1,10 +1,13 @@
 package gregoriofer.local.ejem03_formulario
 
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.AdapterView
+import android.widget.RadioButton
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import gregoriofer.local.ejem03_formulario.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -22,6 +25,49 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         */
+        binding.bRecuperarDatos.setOnClickListener {
+            Log.d("Depurando", "Pulsó ")
+        }
+
+
+
+
+
+    binding.spTipoMatricula.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                Log.d("Depurando", "Selecciono: "+(view as TextView).text)
+                Log.d("Depurando", "Selecciono: "+(view as TextView).text+position)
+                Log.d("Depurando", "Selecciono: "+parent?.adapter?.getItem(position).toString())
+
+                val tipoMatricula = resources.getStringArray(R.array.tiposMatricula)[position]
+                binding.tvTipoMatricula.setText("Tipo de matrícula seleccionado: $tipoMatricula")
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // No hacer nada
+                Log.d("Depurando", "No selecciona nada")
+            }
+
+    }
+    binding.rgCursos.setOnCheckedChangeListener { group, identifier ->
+        Log.d("Depurando", "Selecciono: ${findViewById<RadioButton>(identifier).text}")
+
+    }
+    binding.tvTipoMatricula.setOnClickListener { view ->
+        Log.d("Depurando", "Pulso: "+(view as TextView).text)
+
+    }
+        binding.tvEligeCurso.setOnClickListener { view ->
+            Log.d("Depurando", "Pulso: "+(view as TextView).text)
+
+        }
+binding.checkBox.se
+
 
     }
 }

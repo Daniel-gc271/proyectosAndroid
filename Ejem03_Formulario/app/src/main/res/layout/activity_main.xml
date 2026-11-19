@@ -12,7 +12,7 @@
         android:id="@+id/tvEligeCurso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="3dp"
+        android:layout_margin="5dp"
         android:text="Selecciona tu curso:"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@id/rgCursos"
@@ -23,23 +23,23 @@
         android:id="@+id/rgCursos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="3dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/tvEligeCurso"
-        app:layout_constraintTop_toTopOf="parent">
+        >
 
         <RadioButton
             android:id="@+id/rbCurso1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="3dp"
+            android:layout_margin="5dp"
             android:text="Primero" />
 
         <RadioButton
             android:id="@+id/rbCurso2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="3dp"
+            android:layout_margin="5dp"
             android:text="Segundo" />
 
     </RadioGroup>
@@ -48,7 +48,7 @@
         android:id="@+id/tvTipoMatricula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="3dp"
+        android:layout_margin="5dp"
         android:text="Elige tipo de matrícula:"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@id/spTipoMatricula"
@@ -60,12 +60,30 @@
         android:id="@+id/spTipoMatricula"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="3dp"
-        android:entries="@array/tiposMatricula"
+        android:layout_margin="5dp"
+        android:entries="@array/tipoMatricula"
         android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
 
+
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tvTipoMatricula"
         app:layout_constraintTop_toBottomOf="@id/rgCursos" />
+
+    <CheckBox
+        android:id="@+id/cbRepetidor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Repetidor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spTipoMatricula" />
+
+    <Button
+        android:id="@+id/bRecuperar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recuperar datos"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbRepetidor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "gregoriofer.local.ejem03_formulario"
+    namespace = "com.example.ejem03_formulario"
     compileSdk {
         version = release(36) {
             minorApiLevel = 1
@@ -11,7 +11,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "gregoriofer.local.ejem03_formulario"
+        applicationId = "com.example.ejem03_formulario"
         minSdk = 33
         targetSdk = 36
         versionCode = 1
