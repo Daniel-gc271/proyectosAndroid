@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Ejem03_Formulario</string>
+    <array name="tipoMatricula">
+        <item>Ordinaria</item>
+        <item>Extraordinaria</item>
+        <item>Diferida</item>
+    </array>
+</resources>
