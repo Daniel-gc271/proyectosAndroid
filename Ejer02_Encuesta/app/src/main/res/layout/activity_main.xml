@@ -10,35 +10,37 @@
     tools:context=".MainActivity" >
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/editText_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="Name" />
+        android:text="Nombre" />
 
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/radioButton_Soltero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Soltero" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/radioButton_Casado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="Casado" />
 
     </RadioGroup>
 
     <Spinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:entries="@array/provincias"
+        android:minHeight="48dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,14 +52,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="CheckBox" />
+            android:text="Futbol" />
 
         <CheckBox
             android:id="@+id/checkBox2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="CheckBox" />
+            android:text="Baloncesto" />
 
     </LinearLayout>
 
@@ -65,11 +67,11 @@
         android:id="@+id/checkBox3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CheckBox" />
+        android:text="Balonmano" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Guardar" />
 </LinearLayout>
