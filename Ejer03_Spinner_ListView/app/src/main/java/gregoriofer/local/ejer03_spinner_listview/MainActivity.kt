@@ -59,6 +59,7 @@ class MainActivity : AppCompatActivity() {
             elemento = parent.getItemAtPosition(position).toString()
             Log.d("Depurando", "ListView: $elemento")
         }
+
         binding.buttonEliminar.setOnClickListener {
 
             listaElementos.remove(elemento)
