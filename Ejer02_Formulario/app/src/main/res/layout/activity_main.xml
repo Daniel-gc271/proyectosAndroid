@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="usuario"
+            type="com.example.componentesbasicosii.Persona" />
+
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/tvTituloFormulario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Titulo" />
+
+        <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:ems="10"
+            android:hint="Introduce tu nombre"
+            android:inputType="text"
+            android:text="@{usuario.nombre}" />
+
+        <RadioGroup
+            android:id="@+id/rgEstado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rbSoltero"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Soltero" />
+
+            <RadioButton
+                android:id="@+id/rbCasado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Casado" />
+        </RadioGroup>
+
+        <Spinner
+            android:id="@+id/spCiudad"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:entries="@array/ciudad" />
+
+        <CheckBox
+            android:id="@+id/cbFutbol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Futbol" />
+
+        <CheckBox
+            android:id="@+id/cbBaloncesto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Baloncesto" />
+
+        <CheckBox
+            android:id="@+id/cbTenis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tenis" />
+
+        <Button
+            android:id="@+id/bGuardar"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Guardar" />
+
+        <EditText
+            android:id="@+id/editTextNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/textoEdad"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:text="@{String.valueOf(usuario.edad)}" />
+
+        <ListView
+            android:id="@+id/listViewUsuarios"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:entries="@array/ciudad" />
+
+
+    </LinearLayout>
+</layout>
