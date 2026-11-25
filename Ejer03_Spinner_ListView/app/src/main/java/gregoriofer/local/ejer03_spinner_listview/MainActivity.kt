@@ -11,7 +11,7 @@ import gregoriofer.local.ejer03_spinner_listview.databinding.ActivityMainBinding
 
 lateinit var binding: ActivityMainBinding
 class MainActivity : AppCompatActivity() {
-    var elemento: String=""
+    var elemento: Registro? =null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -27,10 +27,11 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         */
-        val listaElementos = mutableListOf<String>()
+        val listaElementos = mutableListOf<Registro>()
 
         for (i in 1..10) {
-            listaElementos.add("E$i")
+            val r: Registro= Registro("E$i")
+            listaElementos.add(r)
         }
         val elementosVista =ArrayAdapter(this, android.R.layout.simple_list_item_1, listaElementos)
 
@@ -41,22 +42,22 @@ class MainActivity : AppCompatActivity() {
         binding.buttonAAdir.setOnClickListener {
             val textoAñadir: String =   binding.editTextTextEntrada.text.toString()
             binding.editTextTextEntrada.text.clear()
-            if(!textoAñadir.isEmpty()) {
-                listaElementos.add(textoAñadir)
-                elementosVista.notifyDataSetChanged()
+            if(textoAñadir.isNotEmpty()) {
+                val r: Registro= Registro(textoAñadir)
+                listaElementos.add(r)
                 Log.d("Depurando", listaElementos.toString())
             }
         }
 
         binding.lista.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
-            elemento = parent.getItemAtPosition(position) as String
-            Log.d("Depurando", (elemento))
+            elemento = parent.getItemAtPosition(position) as Registro
+            Log.d("Depurando", elemento.toString())
 
         }
 
 
         binding.lista.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
-            elemento = parent.getItemAtPosition(position).toString()
+            elemento = parent.getItemAtPosition(position) as Registro?
             Log.d("Depurando", "ListView: $elemento")
         }
 
