@@ -2,6 +2,7 @@ package gregoriofer.local.ejer03_spinner_listview
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.activity.enableEdgeToEdge
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        binding.miDato = Registro("Pepe botella",21)
 
 
 
@@ -28,39 +30,50 @@ class MainActivity : AppCompatActivity() {
         }
         */
         val listaElementos = mutableListOf<Registro>()
-
         for (i in 1..10) {
-            val r: Registro= Registro("E$i")
+            val r = Registro("E$i",i+10)
             listaElementos.add(r)
         }
-        val elementosVista =ArrayAdapter(this, android.R.layout.simple_list_item_1, listaElementos)
 
+        val elementosVista = ArrayAdapter<Registro>(this, android.R.layout.simple_list_item_1, listaElementos)
 
         binding.lista.adapter = elementosVista
         binding.spinner2.adapter = elementosVista
 
         binding.buttonAAdir.setOnClickListener {
-            val textoAñadir: String =   binding.editTextTextEntrada.text.toString()
-            binding.editTextTextEntrada.text.clear()
+            val textoAñadir: String =   binding.editTextTextEntradaNombre.text.toString()
+            binding.editTextTextEntradaNombre.text.clear()
+            val edadAñadir: Int = (binding.editTextTextEntradaEdad.text.toString().toInt())
+            binding.editTextTextEntradaEdad.text.clear()
             if(textoAñadir.isNotEmpty()) {
-                val r: Registro= Registro(textoAñadir)
+                val r: Registro= Registro(textoAñadir,edadAñadir)
                 listaElementos.add(r)
                 Log.d("Depurando", listaElementos.toString())
+                elementosVista.notifyDataSetChanged()
             }
         }
 
-        binding.lista.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
+        binding.lista.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
             elemento = parent.getItemAtPosition(position) as Registro
             Log.d("Depurando", elemento.toString())
 
         }
+        binding.spinner2.onItemSelectedListener =  object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                elemento = parent?.getItemAtPosition(position) as? Registro
+                Log.d("Depurando", elemento.toString())
+            }
 
-
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                // Opcional: qué hacer si no se selecciona nada
+            }
+        }
+/*
         binding.lista.onItemClickListener = AdapterView.OnItemClickListener { parent, _, position, _ ->
             elemento = parent.getItemAtPosition(position) as Registro?
             Log.d("Depurando", "ListView: $elemento")
         }
-
+*/
         binding.buttonEliminar.setOnClickListener {
 
             listaElementos.remove(elemento)
